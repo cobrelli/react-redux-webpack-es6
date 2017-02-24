@@ -3,10 +3,15 @@ declare var require: any;
 import * as React from "react";
 const styles = require('./hello.css');
 
-export interface HelloProps { compiler: string; framework: string; }
+const helloBlock = (
+    <div className={styles.test}>
+        <h1>Hello World!</h1>
+        <p>Hellow World! ^_^</p>
+    </div>
+);
 
-export class Hello extends React.Component<HelloProps, undefined> {
+export class Hello extends React.Component<undefined, undefined> {
     render() {
-        return <h1 className={styles.test}>Hello from {this.props.compiler} and {this.props.framework}!</h1>;
+        return helloBlock;
     }
 }
