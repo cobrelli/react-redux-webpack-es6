@@ -6,6 +6,7 @@ Goal: Functional reactive js baseline application which is dockerized with es6, 
 * Node.js with express setup complete
 * MongoDB
 * Mongoose
+* REST api
 ## Front:
 * React
 * Redux
