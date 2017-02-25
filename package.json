@@ -1,9 +1,10 @@
 {
-  "name": "baseline-stuff",
-  "version": "1.0.0",
+  "name": "react-redux-webpack-es6",
+  "version": "0.0.1",
   "description": "",
   "main": "server.js",
   "scripts": {
+    "serve": "webpack && node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
