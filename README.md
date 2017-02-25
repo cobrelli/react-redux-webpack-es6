@@ -1,5 +1,5 @@
 # Generic baseline structure for starting projects on
-Goal: Functional reactive js baseline application which is dockerized with es6, webpack and typescript
+Goal: React-redux-RXJS application baseline with Bootstrap, ES6 and webpack
 
 # TODO
 ## Back:
@@ -15,7 +15,6 @@ Goal: Functional reactive js baseline application which is dockerized with es6, 
 * webpack
 * docker
 * es6
-* typescript
 * travis?
 * tests / e2e + unit / mocha, protractor
 ## Architecture

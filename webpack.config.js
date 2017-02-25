@@ -3,8 +3,8 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: {
-        app: "./app/index.tsx",
-        vendor: ['react', 'react-dom']
+        app: './app/index.jsx',
+        vendor: ['react', 'react-dom', 'react-bootstrap']
     },
     output: {
         filename: "bundle.js",
@@ -19,8 +19,14 @@ module.exports = {
 
     module: {
         loaders: [
-            // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
-            { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
+            {
+                test: /.jsx?$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/,
+                query: {
+                    presets: ['es2015', 'react']
+                }
+            },
             { test: /\.js$/, loader: "source-map-loader" },
             {
                 test: /\.css$/,
@@ -39,10 +45,10 @@ module.exports = {
             },
             { test: /\.png$/, loader: "url-loader?limit=100000" },
             { test: /\.jpg$/, loader: "file-loader" },
-            { test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/font-woff' },
-            { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream' },
-            { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file' },
-            { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml' }
+            { test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=10000&mimetype=application/font-woff' },
+            { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=10000&mimetype=application/octet-stream' },
+            { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader' },
+            { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=10000&mimetype=image/svg+xml' }
         ]
     },
 
